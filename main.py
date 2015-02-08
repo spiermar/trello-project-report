@@ -12,7 +12,7 @@ token_secret = os.environ['TRELLO_TOKEN_SECRET']
 board_name = os.environ['TRELLO_BOARD_NAME']
 
 backlog_list = ['To Do']
-release_list = ['Sprint', 'Doing', 'Test']
+release_list = ['Test', 'Doing', 'Sprint']
 ready_list = ['Done']
 
 client = TrelloClient(
