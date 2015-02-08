@@ -76,7 +76,7 @@ def get_backlog_cards():
 		backlog = []
 		for l in backlog_list:
 			backlog.extend(get_all_cards(l))
-		if not memcache.add('backlog:cards', backlog, 60):
+		if not memcache.add('backlog:cards', backlog, 3600):
 			logging.error('Memcache set failed.')
 	return jsonify(backlog=backlog)
 
@@ -89,7 +89,7 @@ def get_release_cards():
 		release = []
 		for l in release_list:
 			release.extend(get_all_cards(l))
-		if not memcache.add('release:cards', release, 60):
+		if not memcache.add('release:cards', release, 3600):
 			logging.error('Memcache set failed.')
 	return jsonify(release=release)
 
@@ -102,6 +102,6 @@ def get_ready_cards():
 		ready = []
 		for l in ready_list:
 			ready.extend(get_all_cards(l))
-		if not memcache.add('ready:cards', ready, 60):
+		if not memcache.add('ready:cards', ready, 3600):
 			logging.error('Memcache set failed.')
 	return jsonify(ready=ready)
