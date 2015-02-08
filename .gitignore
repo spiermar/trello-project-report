@@ -1,0 +1,4 @@
+app.yaml
+lib/*/*
+lib/*.py
+*.pyc
